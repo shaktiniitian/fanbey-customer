@@ -1,1 +1,84 @@
-<p>teams works!</p>
+<app-header></app-header>
+
+<div class="content-wrapper pt-5">
+  <!-- Content Header (Page header) -->
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <!-- Small boxes (Stat box) -->
+      <div class="row">
+        <div class="col-md-10">
+          <div class="accordion" id="accordionExample">
+            <div class="card" *ngFor="let result of items; let i = index">
+              <div
+                class="card-header flex justify-between collapsed"
+                style="background-color: #a3a3ce; cursor: pointer"
+                data-toggle="collapse"
+                [attr.data-target]="'#collapseHeading' + i"
+                aria-expanded="false"
+                [attr.aria-aria]="'#collapseHeading' + i"
+              >
+                <span class="title h4 font-bold">Level #{{ i + 1 }} </span>
+                <span class="accicon"
+                  ><i class="fas fa-angle-down rotate-icon"></i
+                ></span>
+              </div>
+              <div
+                [id]="'collapseHeading' + i"
+                class="collapse"
+                [ngClass]="i == 0 ? 'show' : ''"
+                data-parent="#accordionExample"
+              >
+                <div class="card-body">
+                  <table class="table table-bordered">
+                    <!-- <tr>
+                      <td>{{ result.other.members }}</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>{{ result.other.emis }}</td>
+                      <td>{{ result.other.booking_amount }}</td>
+                    </tr> -->
+                    <tr>
+                      <td colspan="5" style="padding: 0px">
+                        <table
+                          class="table table-bordered"
+                          style="padding-left: 0px; margin-left: 0px"
+                        >
+                          <tr>
+                            <th width="25%">Name</th>
+                            <th style="width: 15.3%">Added By</th>
+                            <!-- <th style="width: 15.3%">Project</th>
+                            <th style="width: 15.3%">Plot Size</th>
+                            <th style="width: 19%">Total Amt</th>
+                            <th style="width: 19%">Revd Amt</th>
+                            <th style="width: 19%">Dues Amt</th> -->
+                            <!-- <th style="width: 11.6%;">EMI</th> -->
+                            <!-- <th>Incentive</th>
+                            <th>Created On</th> -->
+                          </tr>
+                          <tbody *ngFor="let item of result.customers">
+                            <tr>
+                              <td>{{ item.customer_name }}</td>
+                              <td>{{ item.created_by }}</td>
+                              <!-- <td>{{ item.project_name }}</td>
+                              <td>{{ item.area }}</td>
+                              <td>{{ item.netcost }}</td>
+                              <td>{{ item.total_received_amount }}</td>
+                              <td>{{ item.current_dues }}</td>
+                              <td>{{ item.booking_amount }}</td>
+                              <td>{{ item.created_on }}</td> -->
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

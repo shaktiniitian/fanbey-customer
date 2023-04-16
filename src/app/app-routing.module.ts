@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 // import { EditComponent } from './edit/edit.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
+import { TeamsComponent } from './teams/teams.component';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:'profile', component:ProfileComponent},
   {path:'bookings', component:BookingsComponent},
   // {path:'edit', component:EditComponent}
+  {path:'teams', component:TeamsComponent}
 
 ];
 
