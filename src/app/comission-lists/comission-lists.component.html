@@ -27,7 +27,7 @@
               <div
                 [id]=" 'collapseHeading' + i "
                 class="collapse"
-                [ngClass]="i== 0 ? 'show' : '' "                data-parent="#accordionExample"
+                [ngClass]="i== 0 ? 'show' : '' " data-parent="#accordionExample"
               >
                 <div class="card-body">
                   <table class="table table-bordered">
@@ -40,9 +40,9 @@
                     </tr>
                     <tr>
                         <td>{{ result.other.members }}</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>{{ result.other.emis }}</td>
+                        <td>{{result.other.total_costs}}</td>
+                        <td>{{result.other.total_costs}}</td>
+                        <td>{{ result.other.total_received_amounts}}</td>
                         <td>{{ result.other.booking_amount }}</td>
                     </tr>
                     <tr>
@@ -62,7 +62,7 @@
                           </tr>
                           <tbody *ngFor="let item of result.customers">
                           <tr>
-                            <td>{{item.customer_name}}</td>
+                            <td>{{item.customer_name}} <strong>({{item.customer_code}})</strong></td>
                             <td>{{item.created_by}}</td>
                             <td>{{item.project_name}}</td>
                             <td>{{item.area}}</td>

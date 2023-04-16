@@ -58,7 +58,7 @@
                           </tr>
                           <tbody *ngFor="let item of result.customers">
                             <tr>
-                              <td>{{ item.customer_name }}</td>
+                              <td>{{ item.customer_name }} ,<strong>({{item.customer_code}})</strong></td>
                               <td>{{ item.created_by }}</td>
                               <!-- <td>{{ item.project_name }}</td>
                               <td>{{ item.area }}</td>
