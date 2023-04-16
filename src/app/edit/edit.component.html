@@ -1,0 +1,70 @@
+
+<!-- <app-header></app-header> -->
+
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="page-content fade-in-up col-md-8">
+
+<div class="card">
+<div class="card-header">UPDATE PENALTY <span class="d-flex justify-content-end">
+<button type="button" class="btn btn-danger btn-sm btn-rounded">Danger</button></span>
+</div>
+    <div class="card-body">
+        <form  (ngSubmit)="onSubmit()" #f="ngForm">
+            <div class="row">
+              <div class="col">
+                <label for="email">Penalty Condition:</label>
+                <select class="form-control"  id="sel1" ngModel name="penalty_condition">
+                  <option value="">Select Penalty</option>
+                  <option value="{{option.id}}" *ngFor="let option of penality_options">
+                    {{option.name}}
+                  </option> 
+                </select>
+                <!-- <div *ngIf="myForm.get('name').invalid && (myForm.get('name').dirty || myForm.get('name').touched)">
+                  Please provide a name.
+                </div> -->
+              </div>
+              <div class="col">
+                <label for="pwd">Penalty Head:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder=""
+                  id="pwd"  ngModel name="penalty_head"
+                />
+              </div>
+            </div>
+    
+            <div class="row">
+              <div class="col">
+                <label for="email">Type</label>
+                <select class="form-control" id="sel1"  ngModel name="type">
+                  <option>Amout</option>
+                  <option value="{{option.id}}" *ngFor="let option of penality_options">{{option.name}}</option>
+                 
+                </select>
+              </div>
+              <div class="col">
+                <label for="pwd">Value:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder=""
+                  id="val"  ngModel name="val" 
+                />
+                
+              </div>
+            </div>
+          </form>
+       
+         
+        />
+    </div>
+    <div class="card-footer">
+        <button type="button" class="btn btn-success mt-3" (click)="update(f.value)">Update</button>
+
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>

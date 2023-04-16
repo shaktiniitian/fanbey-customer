@@ -1,0 +1,149 @@
+<app-header></app-header>
+
+<div class="content-wrapper pt-5">
+  <!-- Content Header (Page header) -->
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <!-- Small boxes (Stat box) -->
+      <div class="row">
+        <div class="col-md-10">
+          <div class="accordion" id="accordionExample">
+            <div class="card">
+              <div>
+                <div class="card-body">
+                  <table class="table table-bordered">
+                    <tr>
+                      <th>Customer ID</th>
+                      <td>{{ item.customer_code }}</td>
+                      <th>Name</th>
+                      <td>{{ item.customer_name }}</td>
+                    </tr>
+                    <tr>
+                      <th>Gender</th>
+                      <td>{{ item.gender }}</td>
+                      <th>Mobile</th>
+                      <td>{{ item.mobile_no }}</td>
+                    </tr>
+                    <tr>
+                      <th>Alternate Mobile</th>
+                      <td>{{ item.alternate_mob_no }}</td>
+                      <th>Email ID</th>
+                      <td>{{ item.email }}</td>
+                    </tr>
+                    <tr>
+                      <th>PAN No</th>
+                      <td>{{ item.pan_no }}</td>
+                      <th>Adhaar No</th>
+                      <td>{{ item.aadhar_no }}</td>
+                    </tr>
+                    <tr>
+                      <th>Address</th>
+                      <td>{{ item.address }}</td>
+                      <th>Nominee Relation</th>
+                      <td>{{ item.nominee_name }}</td>
+                    </tr>
+                    <tr>
+                      <th>Religion</th>
+                      <td>{{ item.religion }}</td>
+                      <th>Nationality</th>
+                      <td>{{ item.nationality }}</td>
+                    </tr>
+                    <tr>
+                      <th>Country</th>
+                      <td>{{ item.country_detail?.title }}</td>
+                      <th>State</th>
+                      <td>{{ item.state }}</td>
+                    </tr>
+                    <tr>
+                      <th>City</th>
+                      <td>{{ item.city }}</td>
+                      <th></th>
+                      <td></td>
+                    </tr>
+                    <tr style="background-color: #ddd">
+                      <td
+                        colspan="4"
+                        height="45"
+                        style="font-weight: bold; font-size: 20px"
+                      >
+                      Project Details
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Project Name</th>
+                      <td>{{ item.booking_detail?.project?.project_name }}</td>
+                      <th>Property</th>
+                      <td>{{ item.plots ?? '' }}</td>
+                    </tr>
+                    <tr>
+                      <th>Area</th>
+                      <td>{{ item.booking_detail?.area }}</td>
+                      <th>Rate</th>
+                      <td> <i class="fa fa-rupee"></i>{{ item.booking_detail?.rate }}</td>
+
+                    </tr>
+                    <tr>
+                      <th>Net Cost</th>
+                      <td>
+                        <i class="fa fa-rupee"></i> {{item.booking_detail?.netcost }}
+                      </td>
+                      <th>Discount Base</th>
+                      <td>
+                        {{ item.booking_detail?.discount_amount }}
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Discount Value</th>
+                      <td>
+                        {{ item.booking_detail?.discount_amount }}
+                      </td>
+                      <th>Total Cost</th>
+                      <td>
+                        <i class="fa fa-rupee"></i> {{ item.booking_detail?.total_cost }}
+                      </td>
+                    </tr>
+
+                    <!-- <tr style="background-color: #ddd">
+                        <td
+                          colspan="4"
+                          height="45"
+                          style="font-weight: bold; font-size: 20px"
+                        >
+                        Payment Details
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>Payment Type</th>
+                        <td>{{ item.booking_detail?.project?.project_name }}</td>
+                        <th>Property</th>
+                        <td>{{ item.booking_detail?.project?.area }}</td>
+                      </tr>
+                      <tr>
+                        <th>Amount</th>
+                        <td>{{ item.booking_detail?.project?.area }}</td>
+                        <th>Rate</th>
+                        <td>{{ item.booking_detail?.project?.rate }}</td>
+
+                      </tr>
+                      <tr>
+                        <th>Rate/ Unit</th>
+                        <td>
+                          {{ item.booking_detail?.project?.projected_area }} /
+                          {{ item.booking_detail?.project?.projected_unit }}
+                        </td>
+                        <th>Discount Base</th>
+                        <td>
+                          {{ item.booking_detail?.discount_amount }}
+                        </td>
+                      </tr> -->
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

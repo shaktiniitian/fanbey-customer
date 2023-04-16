@@ -1,0 +1,105 @@
+<app-header></app-header>
+
+<div class="content-wrapper pt-5">
+  <!-- Content Header (Page header) -->
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <!-- Small boxes (Stat box) -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="accordion" id="accordionExample">
+            <div class="card">
+                <div class="table-responsive row">
+                    <table class="table table-bordered table-hover" #dataTable>
+                        <thead class="thead-default thead-lg">
+                            <tr>
+                                <th>No.</th>
+                                <th>Date</th>
+                                <th>Customer Id</th>
+                                <th>Customer Name</th>
+                                <th>Sales Type</th>
+                                <th>Project</th>
+                                <th>Property</th>
+                                <th>Area</th>
+                                <th>Total Amount</th>
+                                <th>Received Amount</th>
+                                <th>Due Amount</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody
+                            *ngFor="let item of items; let i = index">
+                            <tr>
+                                <td>{{i+1}}</td>
+                                <td>{{item?.booking_token_emi_date | date: 'mediumDate' }}</td>
+                                <td>{{item.customer_code}}</td>
+                                <td><a href="#" [routerLink]="['/realstate/customer-payment-report']"
+                                        [queryParams]="{bookingId:item?.id,bookingType:item?.booking_type,
+                                        totalCost:item?.total_cost,prevDue:item?.current_dues,
+                                        prevReceived:item?.total_received_amount,customerId:item?.customer_id}">{{item?.customer_name
+                                        || 'NA'}}</a></td>
+                                <td>{{item.ref_type}}</td>
+                                <td>{{item?.project_name}}</td>
+                                <td>{{item?.plotNos}}</td>
+                                <td>{{item?.area}}</td>
+                                <td>{{item?.total_cost || 'NA'}}</td>
+                                <td>{{item?.total_received_amount || 'NA'}}</td>
+                                <td>{{item?.current_dues || 'NA'}}</td>
+                                <td><span *ngIf="item?.status==0">
+                                        <span class="badge badge-danger badge-pill">Deleted</span>
+                                    </span>
+                                    <span *ngIf="item?.status==1">
+                                        <span class="badge badge-success badge-pill">Clear</span>
+                                    </span>
+
+                                    <span *ngIf="item?.status==2">
+                                        <span class="badge badge-primary badge-pill">Closed</span>
+                                    </span>
+
+                                    <span *ngIf="item?.status==3">
+                                        <span class="badge badge-warning badge-pill">Cancelled</span>
+                                    </span>
+
+                                    <span *ngIf="item?.status==4">
+                                        <span class="badge badge-warning badge-pill">Pending</span>
+                                    </span>
+                                </td>
+                                <td width="10%">
+
+
+                                    <!-- <a class="badge badge-success"
+                                        (click)="editCustomerData(item?.id,item?.customer_id)"
+                                        data-toggle="modal" data-target="#editBookingDataModal">
+                                        <i class="fa fa-edit"></i>
+                                    </a> -->
+                                    <!-- <a class="badge badge-danger pull-left text-white mr-2"
+                                        (click)="openConfirmationDialog(item?.id)">
+                                        <i class="fa fa-trash"></i>
+                                    </a> -->
+
+                                    <!-- <a class="badge badge-primary  text-white ml-2"
+                                        (click)="generatePaymentReport(item.payment_id)">
+                                        <i class="fa fa-download"></i>
+                                    </a> -->
+<!-- 
+                                    <a *ngIf="item.ref_type=='MLM'"
+                                        class="badge badge-warning pull-right text-white ml-2 mr-2"
+                                        [routerLink]="['/customers/comission']" [queryParams]="{c_id: item.id}">
+                                        <i class="fa fa-eye"></i>
+                                    </a> -->
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+          
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
