@@ -12,6 +12,7 @@ import { EditComponent } from './edit/edit.component';
 import { ComissionListsComponent } from './comission-lists/comission-lists.component';
 import { ProfileComponent } from './profile/profile.component';
 import { BookingsComponent } from './bookings/bookings.component';
+import { TeamsComponent } from './teams/teams.component';
 // import { HeaderModule } from './header/header.module';
 
 @NgModule({
@@ -23,7 +24,8 @@ import { BookingsComponent } from './bookings/bookings.component';
     EditComponent,
     ComissionListsComponent,
     ProfileComponent,
-    BookingsComponent
+    BookingsComponent,
+    TeamsComponent
 
   ],
   imports: [
