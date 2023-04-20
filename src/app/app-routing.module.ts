@@ -5,7 +5,9 @@ import { ComissionListsComponent } from './comission-lists/comission-lists.compo
 import { DashboardComponent } from './dashboard/dashboard.component';
 // import { EditComponent } from './edit/edit.component';
 import { LoginComponent } from './login/login.component';
+import { PaymentsComponent } from './payments/payments.component';
 import { ProfileComponent } from './profile/profile.component';
+import { RewardsComponent } from './rewards/rewards.component';
 import { TeamsComponent } from './teams/teams.component';
 
 const routes: Routes = [
@@ -15,7 +17,9 @@ const routes: Routes = [
   {path:'profile', component:ProfileComponent},
   {path:'bookings', component:BookingsComponent},
   // {path:'edit', component:EditComponent}
-  {path:'teams', component:TeamsComponent}
+  {path:'teams', component:TeamsComponent},
+  {path:'rewards', component:RewardsComponent},
+  {path:'payments', component:PaymentsComponent}
 
 ];
 

@@ -9,6 +9,8 @@ import { ApiService } from '../ApiService';
 })
 export class ComissionListsComponent {
 
+  loader:any = false;
+
   items:any;
   constructor(
     private api: ApiService,
@@ -20,18 +22,23 @@ export class ComissionListsComponent {
    this.getComissions(); 
   }
   getComissions() {
+    this.loader = true;
 
     this.api.get('customer/members?c_id='+localStorage.getItem('user_id')).subscribe(
       (res: any) => {
-
         this.items = Object.values(res.records)
-
-        console.log(this.items.length);
-
+        this.loader = false;
       },
+
       (err) => {
+        // this.loader = false;
+
       }
     );
   }
+
+  
+
+
 
 }

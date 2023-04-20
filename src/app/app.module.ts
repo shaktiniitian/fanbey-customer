@@ -13,6 +13,9 @@ import { ComissionListsComponent } from './comission-lists/comission-lists.compo
 import { ProfileComponent } from './profile/profile.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { TeamsComponent } from './teams/teams.component';
+import { RewardsComponent } from './rewards/rewards.component';
+import { PaymentsComponent } from './payments/payments.component';
+import { LoaderComponent } from './loader/loader.component';
 // import { HeaderModule } from './header/header.module';
 
 @NgModule({
@@ -25,7 +28,10 @@ import { TeamsComponent } from './teams/teams.component';
     ComissionListsComponent,
     ProfileComponent,
     BookingsComponent,
-    TeamsComponent
+    TeamsComponent,
+    RewardsComponent,
+    PaymentsComponent,
+    LoaderComponent
 
   ],
   imports: [
